@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class LessonPlans extends Component {
+class Lessons extends Component {
 	constructor(props) {
 		super(props)
 
+	}
+
+	componentDidMount() {
+		this.props.getLessonPlans();
 	}
 
 	render() {
@@ -15,9 +19,10 @@ class LessonPlans extends Component {
 	}
 }
 
-const mapStateToProps = state = {
+const mapStateToProps = (state) => {
+	const { lessons : lessons } = state.lessons 
 	return{
-		lesson_plans: state.lesson_plans
+		lessons
 	}
 }
-export default connect(mapStateToProps)(LessonPlans);
+export default connect(mapStateToProps)(Lessons);
