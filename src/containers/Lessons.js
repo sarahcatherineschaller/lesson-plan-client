@@ -16,8 +16,8 @@ class Lessons extends Component {
 }
 
 const mapStateToProps = state = {
-	return {
+	return{
 		lessons: state.lessons
 	}
 }
-export default connect(mapStateToProps)(LessonPlans)
+export default connect(mapStateToProps)(Lessons)
