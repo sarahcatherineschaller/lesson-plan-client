@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk';
-import lessons from './reducers/lessons';
+import lessonsReducer from './reducers/lessonsReducer';
 import lessonFormData from './reducers/lessonFormData';
 import lessonEditData from './reducers/lessonEditData';
 
 
 const reducers = combineReducers({
-	lessons,
+	lessonsReducer,
 	lessonFormData,
 	lessonEditData
 });

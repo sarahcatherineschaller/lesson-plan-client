@@ -7,7 +7,7 @@ import Contact from './components/Contact';
 import Lessons from './containers/Lessons';
 import { connect } from 'react-redux';
 import { getLessons } from './actions/lessons';
-import lessons from './reducers/lessons'
+import lessonsReducer from './reducers/lessonsReducer'
 
 import './App.css';
 
@@ -36,7 +36,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return({
-    lessons: state.lessons
+    lessons: state.lessonsReducer
   })
 }
 
