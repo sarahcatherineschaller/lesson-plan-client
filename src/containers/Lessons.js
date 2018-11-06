@@ -7,29 +7,16 @@ import Lesson from './Lessons';
 import LessonForm from './LessonForm';
 
 class Lessons extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			lessons: this.props.lessons
-		}
-
-	}
 
 	componentDidMount() {
-		this.props.onGetLessons();
+		this.props.getLessons();
 	}
 
 	render() {
-		
-		const match = this.props.match;
-		
-		
+
 		return(
 			<div>
-		
-         			
-          			<LessonForm />
-        	
+				{this.props && this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)}
 			</div>
 		)
 	}
@@ -42,6 +29,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = (state) => {
+	console.log(state)
 	
 	const { lessons : lessons } = state.lessons 
 	return{

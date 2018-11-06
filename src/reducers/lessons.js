@@ -1,8 +1,18 @@
+const initialState = {
+	title: '', 
+	grade_level: '', 
+	subject: '', 
+	total_time: '', 
+	objective: '', 
+	materials: '', 
+	summary: '', 
+	other: '',
+}
 
-export default (state = {}, action) => {
+export default (state = initialState, action) => {
 	switch(action.type) {
 		case 'GET_LESSONS':
-		console.log(action)
+		console.log(action.lessons)
 			return {
 				...state,
 				lessons : action.lessons
