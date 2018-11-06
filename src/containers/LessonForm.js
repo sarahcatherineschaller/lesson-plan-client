@@ -28,7 +28,7 @@ class LessonForm extends Component {
 					<label>add lesson plan</label>
 					<input type="text" onChange={ event => this.handleChange(event) } name="title" value={ title } />
 				</p>
-				<input type="submit" />
+				<input className="newLessonButton" type="submit" />
 				</form>
 			</div>
 		)
