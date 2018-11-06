@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import lessonReducer from './lessonReducer';
+import lessonPlanReducer from './lessonReducer';
 
 export default combineReducers({
-	lessons: lessonReducer
+	lesson_plans: lessonPlansReducer
 });
