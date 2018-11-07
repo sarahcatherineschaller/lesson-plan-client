@@ -18,7 +18,19 @@ const resetFormData = () => {
 	}
 }
 
+const updateLessonFormData = formData => {
+	return {
+		type: 'UPDATE_LESSON_FORM_DATA',
+		formData
+	}
+}
 
+const editLesson = lesson => {
+	return {
+		type: 'EDIT_LESSON',
+		lesson
+	}
+}
 
 
 export const getLessons = () => {
@@ -58,6 +70,24 @@ export const createLesson = lesson => {
 				dispatch(resetFormData()) 
 			})
 
+			.catch(error => console.log(error))
+	}
+}
+
+export const updateLesson = (lesson, history) => {
+	return dispatch => {
+		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": 'application:json'
+			},
+			body: JSON.stringify({ lesson: lesson })
+		})
+			.then(response => response.json())
+			.then(lesson => {
+				dispatch(editLesson(lesson)) 
+				dispatch(resetLessonEditData())
+			})
 			.catch(error => console.log(error))
 	}
 }
