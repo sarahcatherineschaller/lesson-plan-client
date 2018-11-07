@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getLessons } from '../actions/lessons';
 import {LessonCard} from '../components/LessonCard';
-import Lesson from './Lesson';
+import LessonShow from './LessonShow';
 import LessonForm from './LessonForm';
 import { Row } from 'reactstrap';
 

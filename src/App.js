@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { getLessons } from './actions/lessons';
 import lessonsReducer from './reducers/lessonsReducer';
 import LessonForm from './containers/LessonForm';
-import Lesson from './containers/Lesson';
+import LessonShow from './containers/LessonShow';
 import LessonCard from './components/LessonCard';
 
 import './App.css';
@@ -31,7 +31,7 @@ class App extends Component {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/lessons/new" component={LessonForm} />
         <Route exact path="/lessons" component={Lessons} />
-        <Route exact path="/lessons/:lessonId" component={Lesson} />
+        <Route exact path="/lessons/:lessonId" component={LessonShow} />
         </Switch>
        </div>
       </Router>
