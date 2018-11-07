@@ -7,7 +7,8 @@ import Contact from './components/Contact';
 import Lessons from './containers/Lessons';
 import { connect } from 'react-redux';
 import { getLessons } from './actions/lessons';
-import lessonsReducer from './reducers/lessonsReducer'
+import lessonsReducer from './reducers/lessonsReducer';
+import LessonForm from './containers/LessonForm';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ class App extends Component {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/lessons" component={Lessons} />
+        <Route exact path="/lessons/new" component={LessonForm} />
         </Switch>
        </div>
       </Router>
