@@ -12,6 +12,12 @@ const addLesson = lesson => {
 	}
 }
 
+const resetFormData = () => {
+	return {
+		type: 'RESET_FORM'
+	}
+}
+
 
 
 
@@ -30,8 +36,9 @@ export const getLesson = (lessonId) => {
 	return dispatch => {
 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`)
 		.then(response => response.json())
-		console.log("hi")
-		.then(lesson => { dispatch(setLessons([lesson])) })
+		.then(lesson => { 
+			dispatch(setLessons([lesson])) 
+		})
 		.catch(error => console.log(error))
 	}
 }
@@ -46,7 +53,11 @@ export const createLesson = lesson => {
 			body: JSON.stringify(lesson)
 		})
 			.then(response => response.json())
-			.then(lesson => dispatch(addLesson(lesson)))
+			.then(lesson => {
+				dispatch(addLesson(lesson))
+				dispatch(resetFormData()) 
+			})
+
 			.catch(error => console.log(error))
 	}
 }

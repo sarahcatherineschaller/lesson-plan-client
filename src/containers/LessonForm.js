@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createLesson } from '../actions/lessons';
 import { updateLessonFormData } from '../actions/lessonForm';
+import { resetFormData } from '../actions/lessonForm';
 import Lessons from './Lessons';
 import { Col, Button, Form, Label, Input, FormGroup, FormText } from 'reactstrap';
+
 
 class LessonForm extends Component {
 
