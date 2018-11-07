@@ -5,6 +5,7 @@ import { getLessons } from '../actions/lessons';
 import {LessonCard} from '../components/LessonCard';
 import Lesson from './Lessons';
 import LessonForm from './LessonForm';
+import { Row } from 'reactstrap';
 
 class Lessons extends Component {
 
