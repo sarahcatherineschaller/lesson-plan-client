@@ -5,7 +5,7 @@ const lessonsReducer = (state = [], action) => {
 		case 'GET_LESSONS':
 			return state.concat(action.lessons)
 		case 'ADD_LESSON':
-			return {...state, lessons: [state.lessons, action.addLesson]}
+			return state.concat(action.lesson)
 		default:
 			return state;
 	}

@@ -22,48 +22,47 @@ class LessonForm extends Component {
 
 	render() {
 		const { title, grade_level, subject, total_time, objective, materials, summary, other } = this.props.lessonFormData
-
 		return(
 				<Col sm="12" md={{ size: 6, offset:3 }}>
-				<Form onSubmit={ (event) => this.handleSubmit(event) }>
+				<Form onSubmit={ this.handleSubmit }>
+				
 				<FormGroup>
 					<Label>Title</Label>
-					<Input type="text" onChange={ event => this.handleChange(event) } name="title" value={ title } />
+					<Input type="text" onChange={this.handleChange} name="title" value={ title } />
 		
 				</FormGroup>
 				<FormGroup>
 					<Label>Grade Level</Label>
-					<Input type="text" onChange={ event => this.handleChange(event) } name="grade_level" value={ grade_level } />
+					<Input type="text" onChange={this.handleChange} name="grade_level" value={ grade_level } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Subject</Label>
-					<Input type="text" onChange={ event => this.handleChange(event) } name="subject" value={ subject } />
+					<Input type="text" onChange={this.handleChange} name="subject" value={ subject } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Total Time</Label>
-					<Input type="text" onChange={ event => this.handleChange(event) } name="total_time" value={ total_time } />
+					<Input type="text" onChange={this.handleChange} name="total_time" value={ total_time } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Objective</Label>
-					<Input type="textea" onChange={ event => this.handleChange(event) } name="objective" value={ objective } />
+					<Input type="textea" onChange={this.handleChange} name="objective" value={ objective } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Materials</Label>
-					<Input type="textarea" onChange={ event => this.handleChange(event) } name="materials" value={ materials } />
+					<Input type="textarea" onChange={this.handleChange} name="materials" value={ materials } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Summary</Label>
-					<Input type="textarea" onChange={ event => this.handleChange(event) } name="summary" value={ summary } />
+					<Input type="textarea" onChange={this.handleChange} name="summary" value={ summary } />
 				</FormGroup>
 				<FormGroup>
 					<Label>Other</Label>
-					<Input type="textarea" onChange={ event => this.handleChange(event) } name="other" value={ other } />
+					<Input type="textarea" onChange={this.handleChange} name="other" value={ other } />
 				</FormGroup>
-				<Button color="primary">
-					Submit
-				</Button>
+				<input type="submit" />
 				
 			</Form>
+
 			</Col>
 		)
 	}
