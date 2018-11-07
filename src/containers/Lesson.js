@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LessonCard from '../components/LessonCard';
 import { getLesson } from '../actions/lessons';
-import LessonForm from './LessonForm'
-import Lessons from './Lessons';
+
 
 class Lesson extends Component {
-
 	componentDidMount() {
-		this.props.getLesson(this.props.match.params.recipeId)
+		this.props.getLesson(this.props.match.params.lessonId)
 	}
+
 	render() {
-		let lesson = this.props.lesson[0]
+		let lesson = this.props.lessons[0]
+		
+
 		return(
+
+
 			<div>
-				<h1>Lesson</h1>
+				{lesson ? (
+					<div>
+						<h1>{lesson.title}</h1>
+						<h3>Grade Level: {lesson.grade_level}</h3>
+					</div>
+				) : (
+					<p>Please Wait</p>
+				)}
 			</div>
+		
+			
 		)
 	}
 }
 
 const mapStateToProps = (state) => {
+	console.log(state)
 	return({
-		lesson: state.lessonsReducer
+		lessons: state.lessonsReducer
 	})
 }
 

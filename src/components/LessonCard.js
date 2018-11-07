@@ -16,4 +16,4 @@ export const LessonCard = ({lesson}) => (
 		</Col>
 	</Card>
 
-	)
+)

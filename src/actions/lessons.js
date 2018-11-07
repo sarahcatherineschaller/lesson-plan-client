@@ -30,6 +30,7 @@ export const getLesson = (lessonId) => {
 	return dispatch => {
 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`)
 		.then(response => response.json())
+		console.log("hi")
 		.then(lesson => { dispatch(setLessons([lesson])) })
 		.catch(error => console.log(error))
 	}

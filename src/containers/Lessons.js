@@ -3,19 +3,17 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getLessons } from '../actions/lessons';
 import {LessonCard} from '../components/LessonCard';
-import Lesson from './Lessons';
+import Lesson from './Lesson';
 import LessonForm from './LessonForm';
 import { Row } from 'reactstrap';
 
 class Lessons extends Component {
 
-	// componentDidMount() {
-	// 	this.props.getLessons();
-	// }
-
 	render() {
+		const lessons = this.props.lessons
 
 		return(
+
 			<div>
 			<h1>Lesson Plans</h1>
 				<Row>
@@ -37,6 +35,7 @@ class Lessons extends Component {
 // });
 
 const mapStateToProps = (state) => {
+	console.log(state)
 	
 	return({
 		lessons: state.lessonsReducer
