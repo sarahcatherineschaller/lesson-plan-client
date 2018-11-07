@@ -18,9 +18,14 @@ class Lessons extends Component {
 		return(
 			<div>
 			<h1>Lesson Plans</h1>
+				<Row>
+			
 				{this.props && this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)}
 				<LessonForm />
+				</Row>
 			</div>
+		
+			
 		)
 	}
 }

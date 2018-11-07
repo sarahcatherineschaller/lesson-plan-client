@@ -2,3 +2,9 @@
   text-align: center;
 }
 
+.card {
+	width: 400px;
+	margin: 10px;
+	left: 20px;
+}
+

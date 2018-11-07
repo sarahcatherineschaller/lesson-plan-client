@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import '../App.css'
 
 
 const Navbar = () => {
@@ -9,6 +11,7 @@ const Navbar = () => {
 			<Link to='/about'>About</Link>{" "}
 			<Link to='/contact'>Contact</Link>{" "}
 			<Link to='/lessons'>Lessons</Link>{" "}
+			<Link to='/lessons/new'>Create</Link>
 
 		</div>
 	)
