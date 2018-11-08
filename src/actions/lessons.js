@@ -18,12 +18,6 @@ const resetFormData = () => {
 	}
 }
 
-const updateLessonFormData = formData => {
-	return {
-		type: 'UPDATE_LESSON_FORM_DATA',
-		formData
-	}
-}
 
 const editLesson = lesson => {
 	return {
@@ -76,7 +70,7 @@ export const createLesson = lesson => {
 
 export const updateLesson = (lesson, history) => {
 	return dispatch => {
-		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`, {
+		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": 'application:json'
@@ -86,7 +80,6 @@ export const updateLesson = (lesson, history) => {
 			.then(response => response.json())
 			.then(lesson => {
 				dispatch(editLesson(lesson)) 
-				dispatch(resetLessonEditData())
 			})
 			.catch(error => console.log(error))
 	}

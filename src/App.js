@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Lessons from './containers/Lessons';
+import Title from './components/Title'
 import { connect } from 'react-redux';
 import { getLessons } from './actions/lessons';
 import lessonsReducer from './reducers/lessonsReducer';
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <Router>
        <div className="App">
+        <Title />
         <Navbar />
         <Switch>
         <Route exact path="/" component={Home} />

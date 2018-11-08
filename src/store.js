@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk';
 import lessonsReducer from './reducers/lessonsReducer';
 import lessonFormData from './reducers/lessonFormData';
-import lessonEditData from './reducers/lessonEditData';
 
 
 const reducers = combineReducers({

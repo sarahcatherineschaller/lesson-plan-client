@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 const LessonShow = ({ lesson }) =>
 	<div>
 		<h1>{lesson.title}</h1>
+		
 		<p>{lesson.summary}</p>
 	</div>
 
