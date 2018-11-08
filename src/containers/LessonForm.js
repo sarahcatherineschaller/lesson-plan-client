@@ -9,6 +9,7 @@ import { Col, Button, Form, Label, Input, FormGroup, FormText } from 'reactstrap
 
 class LessonForm extends Component {
 
+
 	handleChange = event => {
 		const { name, value } = event.target 
 		const currentLessonFormData = Object.assign({}, this.props.lessonFormData, {

@@ -52,18 +52,19 @@ export const getLesson = (lessonId) => {
 	}
 }
 
-export const createLesson = lesson => {
+export const createLesson = (lesson, history) => {
 	return dispatch => {
 		return fetch('http://localhost:3001/api/v1/lesson_plans', {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify(lesson)
+			body: JSON.stringify(lesson: lesson)
 		})
 			.then(response => response.json())
 			.then(lesson => {
 				dispatch(addLesson(lesson))
+				history.push("/lessons")
 				dispatch(resetFormData()) 
 			})
 
