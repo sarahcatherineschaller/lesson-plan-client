@@ -11,8 +11,9 @@ export const LessonCard = ({lesson}) => (
 		<CardBody>
 			<DeleteLesson history={lesson.history} lesson={lesson} />
 			<h5><Link to={`/lessons/${lesson.id}`}>{lesson.title}</Link></h5>
-			<CardSubtitle>Grade Level: {lesson.grade_level}</CardSubtitle>
-			<CardSubtitle>Subject: {lesson.subject}</CardSubtitle>
+			<CardText>Grade Level: {lesson.grade_level}</CardText>
+			<CardText>Subject: {lesson.subject}</CardText>
+			<CardText>Total Time: {lesson.total_time}</CardText> 
 			<CardText>{lesson.summary}</CardText>
 		</CardBody>
 		

@@ -5,9 +5,14 @@ import { deleteLesson } from '../actions/lessons';
 
 const LessonShow = ({ lesson }) =>
 	<div>
-		<h1>{lesson.title}</h1>
-
-		<p>{lesson.summary}</p>
+		<h2>{lesson.title}</h2>
+		<p>Grade Level: {lesson.grade_level}</p>
+		<p>Subject: {lesson.subject}</p>
+		<p>Total Time: {lesson.total_time}</p>
+		<p>Objective: {lesson.objective}</p>
+		<p>Materials: {lesson.materials}</p>
+		<p>Summary: {lesson.summary}</p>
+		<p>Other information: {lesson.other}</p>
 	</div>
 
 
