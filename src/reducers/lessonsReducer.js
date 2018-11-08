@@ -6,6 +6,14 @@ const lessonsReducer = (state = [], action) => {
 			return state.concat(action.lessons)
 		case 'ADD_LESSON':
 			return state.concat(action.lesson)
+		case 'REMOVE_LESSON':
+			return state.map(lesson => {
+				if (lesson.id === action.lesson.id) {
+					return action.lesson 
+				} else {
+					return lesson
+				}
+			})
 		// case 'EDIT_LESSON':
 		// 	return state.map(lesson => {
 		// 		if (lesson.id === action.lesson.id) {
