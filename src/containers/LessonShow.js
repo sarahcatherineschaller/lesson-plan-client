@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteLesson } from '../actions/lessons';
 
 
 const LessonShow = ({ lesson }) =>
 	<div>
 		<h1>{lesson.title}</h1>
-		
+
 		<p>{lesson.summary}</p>
 	</div>
 

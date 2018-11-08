@@ -71,14 +71,13 @@ export const createLesson = lesson => {
 	}
 }
 
-export const deleteLesson = (lessonId, routerHistory) => {
+export const deleteLesson = (lessonId) => {
 	return dispatch => {
 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`, {
 			method: "DELETE"
 		})
 		.then(response => {
-			dispatch(removeLesson(lessonId));
-			routerHistory.replace('/lessons');
+			dispatch(removeLesson(lessonId));;
 		})
 		.catch(error => console.log(error))
 	}
