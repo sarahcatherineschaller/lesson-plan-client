@@ -24,4 +24,4 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-export default connect(mapStateToProps)(LessonShow);
+export default connect(mapStateToProps, { deleteLesson })(LessonShow);

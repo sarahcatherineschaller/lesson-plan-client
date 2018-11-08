@@ -77,7 +77,7 @@ export const deleteLesson = (lessonId) => {
 			method: "DELETE"
 		})
 		.then(response => {
-			dispatch(removeLesson(lessonId));;
+			dispatch(removeLesson(lessonId));
 		})
 		.catch(error => console.log(error))
 	}
