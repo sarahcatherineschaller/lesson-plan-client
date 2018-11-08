@@ -1,10 +1,15 @@
 ## Lesson Plan Organizer
 
 This is a React and Redux CRUD application with a Rails backend. To run this app, you need two separate repositories. 
+
 Fork and clone lesson-plan-api: https://github.com/sarahcatherineschaller/lesson-plan-api
+
 Run bundle install inside the directory, and rake db:migrate. In your terminal, run rails s -p 3001 to start a local server.
+
 Fork and clone lesson-plan-client: https://github.com/sarahcatherineschaller/lesson-plan-client
+
 In a separate terminal window, run npm install inside the directory. Run npm start to run the client.
+
 Go to http://localhost:3000/ in your browser to view the app.
 
 ## Contributing
