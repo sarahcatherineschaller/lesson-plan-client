@@ -19,12 +19,12 @@ const resetFormData = () => {
 }
 
 
-const editLesson = lesson => {
-	return {
-		type: 'EDIT_LESSON',
-		lesson
-	}
-}
+// const editLesson = lesson => {
+// 	return {
+// 		type: 'EDIT_LESSON',
+// 		lesson
+// 	}
+// }
 
 
 export const getLessons = () => {
@@ -68,19 +68,19 @@ export const createLesson = lesson => {
 	}
 }
 
-export const updateLesson = (lesson, history) => {
-	return dispatch => {
-		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": 'application:json'
-			},
-			body: JSON.stringify({ lesson: lesson })
-		})
-			.then(response => response.json())
-			.then(lesson => {
-				dispatch(editLesson(lesson)) 
-			})
-			.catch(error => console.log(error))
-	}
-}
+// export const updateLesson = (lesson, history) => {
+// 	return dispatch => {
+// 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
+// 			method: "PATCH",
+// 			headers: {
+// 				"Content-Type": 'application:json'
+// 			},
+// 			body: JSON.stringify({ lesson: lesson })
+// 		})
+// 			.then(response => response.json())
+// 			.then(lesson => {
+// 				dispatch(editLesson(lesson)) 
+// 			})
+// 			.catch(error => console.log(error))
+// 	}
+// }
