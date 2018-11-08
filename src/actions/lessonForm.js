@@ -5,3 +5,9 @@ export const updateLessonFormData = lessonFormData => {
 	}
 }
 
+
+export const resetFormData = () => {
+	return {
+		type: 'RESET_FORM'
+	}
+}

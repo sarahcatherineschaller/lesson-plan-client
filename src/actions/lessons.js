@@ -1,3 +1,5 @@
+import { resetFormData } from './lessonForm';
+
 const setLessons = lessons => {
 	return {
 		type: 'GET_LESSONS',
@@ -9,12 +11,6 @@ const addLesson = lesson => {
 	return {
 		type: 'CREATE_LESSON',
 		lesson
-	}
-}
-
-const resetFormData = () => {
-	return {
-		type: 'RESET_FORM'
 	}
 }
 
