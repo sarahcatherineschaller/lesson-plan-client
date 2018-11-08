@@ -14,6 +14,13 @@ const addLesson = lesson => {
 	}
 }
 
+export const removeLesson = lesson => {
+	return {
+		type: 'REMOVE_LESSON',
+		lesson
+	}
+}
+
 
 // const editLesson = lesson => {
 // 	return {
@@ -61,6 +68,19 @@ export const createLesson = lesson => {
 			})
 
 			.catch(error => console.log(error))
+	}
+}
+
+export const deleteLesson = (lessonId, routerHistory) => {
+	return dispatch => {
+		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lessonId}`, {
+			method: "DELETE"
+		})
+		.then(response => {
+			dispatch(removeLesson(lessonId));
+			routerHistory.replace('/lessons');
+		})
+		.catch(error => console.log(error))
 	}
 }
 
