@@ -5,23 +5,25 @@ import { updateLessonFormData } from '../actions/lessonForm';
 import { resetFormData } from '../actions/lessonForm';
 import Lessons from './Lessons';
 import { Col, Button, Form, Label, Input, FormGroup, FormText } from 'reactstrap';
+import { bindActionCreators } from 'redux';
+import * as actions from '../actions/lessons';
 
 
 class LessonForm extends Component {
-	constructor(props) {
-		super(props);
+	// constructor(props) {
+	// 	super(props);
 
-		this.state = {
-			title: '', 
-			grade_level: '', 
-			subject: '', 
-			total_time: '', 
-			objective: '', 
-			materials: '', 
-			summary: '', 
-			other: '',
-		}
-	}
+	// 	this.state = {
+	// 		title: '', 
+	// 		grade_level: '', 
+	// 		subject: '', 
+	// 		total_time: '', 
+	// 		objective: '', 
+	// 		materials: '', 
+	// 		summary: '', 
+	// 		other: '',
+	// 	}
+	// }
 
 
 
