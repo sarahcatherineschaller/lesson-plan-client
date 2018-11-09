@@ -5,7 +5,7 @@ import { getLessons } from '../actions/lessons';
 import {LessonCard} from '../components/LessonCard';
 import LessonShow from './LessonShow';
 import LessonForm from './LessonForm';
-import { Row } from 'reactstrap';
+import { Card, CardBody, Row, UncontrolledCollapse, Button } from 'reactstrap';
 
 class Lessons extends Component {
 
@@ -15,11 +15,16 @@ class Lessons extends Component {
 		return(
 
 			<div>
-			<h1>Lesson Plans</h1>
+
+				<Button color="primary" id="toggler" style={{ margin: '2rem' }}>
+					New Lesson
+				</Button>
+				<UncontrolledCollapse toggler="#toggler">
+					<LessonForm />
+				</UncontrolledCollapse>
 				<Row>
 			
 				{this.props && this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)}
-				<LessonForm />
 				</Row>
 			</div>
 		
