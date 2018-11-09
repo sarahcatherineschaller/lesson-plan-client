@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteLesson } from '../actions/lessons';
 import DeleteButton from '../components/DeleteButton';
+import { UncontrolledCollapse, Button } from 'reactstrap';
 
 class DeleteLesson extends Component {
 

@@ -52,7 +52,7 @@ export const getLesson = (lessonId) => {
 	}
 }
 
-export const createLesson = (lesson, history) => {
+export const createLesson = (lesson) => {
 	return dispatch => {
 		return fetch('http://localhost:3001/api/v1/lesson_plans', {
 			method: "POST",
@@ -64,7 +64,6 @@ export const createLesson = (lesson, history) => {
 			.then(response => response.json())
 			.then(lesson => {
 				dispatch(addLesson(lesson))
-				history.push("/lessons")
 				dispatch(resetFormData()) 
 			})
 

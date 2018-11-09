@@ -8,6 +8,21 @@ import { Col, Button, Form, Label, Input, FormGroup, FormText } from 'reactstrap
 
 
 class LessonForm extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			title: '', 
+			grade_level: '', 
+			subject: '', 
+			total_time: '', 
+			objective: '', 
+			materials: '', 
+			summary: '', 
+			other: '',
+		}
+	}
+
 
 
 	handleChange = event => {
@@ -22,6 +37,17 @@ class LessonForm extends Component {
 		event.preventDefault();
 		this.props.createLesson(this.props.lessonFormData, this.props.history)
 	}
+
+	componentDidUpdate(prevProps) {
+		console.log(prevProps.lessonFormData.title)
+		console.log(this.props.lessonFormData.title)
+		console.log(this.state)
+
+		// if (prevProps.lessonFormData.title !== this.props.lessonFormData.title) {
+		// 	return this.state
+		// }
+	}
+
 
 	render() {
 		const { title, grade_level, subject, total_time, objective, materials, summary, other } = this.props.lessonFormData
