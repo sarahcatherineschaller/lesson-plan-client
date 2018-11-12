@@ -53,6 +53,7 @@ export const getLesson = (lessonId) => {
 }
 
 export const createLesson = (lesson) => {
+	console.log('C')
 	return dispatch => {
 		return fetch('http://localhost:3001/api/v1/lesson_plans', {
 			method: "POST",
@@ -63,12 +64,14 @@ export const createLesson = (lesson) => {
 		})
 			.then(response => response.json())
 			.then(lesson => {
+				console.log('D')
 				dispatch(addLesson(lesson))
 				dispatch(resetFormData()) 
 			})
 
 			.catch(error => console.log(error))
 	}
+	console.log('E')
 }
 
 export const deleteLesson = (lessonId) => {

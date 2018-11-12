@@ -3,9 +3,25 @@ import { Col, Card, CardText, CardBody, CardTitle, CardSubtitle, Button } from '
 import { Link } from 'react-router-dom';
 import DeleteLesson from '../containers/DeleteLesson';
 
-export const LessonCard = ({lesson}) => (
+class LessonCard extends Component {
+	constructor() {
+		super() 
+		this.state = {
+			count: 0
+		}
+	}
 
-	<Card className="card" key={lesson.id}>
+	handleOnClick = () => {
+		this.setState({
+			count: this.state.count + 1
+		})
+	}
+
+	render() {
+		const { lesson } = this.props;
+
+		return(
+		<Card className="card" key={lesson.id}>
 		<Col sm="12">
 		
 		<CardBody>
@@ -17,9 +33,15 @@ export const LessonCard = ({lesson}) => (
 			<CardText>Total Time: {lesson.total_time}</CardText> 
 			<CardText>{lesson.summary}</CardText>
 
+			<Button onClick={this.handleOnClick}> Like </Button> 
+			<h4>{this.state.count}</h4>
+
 		</CardBody>
 		
 		</Col>
 	</Card>
+		)
+	}
+}
 
-)
+export default LessonCard;

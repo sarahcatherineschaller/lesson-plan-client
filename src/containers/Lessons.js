@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getLessons } from '../actions/lessons';
-import {LessonCard} from '../components/LessonCard';
+import LessonCard from '../components/LessonCard';
 import LessonShow from './LessonShow';
 import LessonForm from './LessonForm';
 import { Card, CardBody, Row, UncontrolledCollapse, Button } from 'reactstrap';

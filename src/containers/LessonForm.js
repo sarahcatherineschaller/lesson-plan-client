@@ -37,13 +37,13 @@ class LessonForm extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
+		console.log('A')
 		this.props.createLesson(this.props.lessonFormData, this.props.history)
+		console.log('B')
 	}
 
 	componentDidUpdate(prevProps) {
-		console.log(prevProps.lessonFormData.title)
-		console.log(this.props.lessonFormData.title)
-		console.log(this.state)
+
 
 		// if (prevProps.lessonFormData.title !== this.props.lessonFormData.title) {
 		// 	return this.state
