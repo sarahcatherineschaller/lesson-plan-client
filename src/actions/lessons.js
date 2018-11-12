@@ -21,6 +21,13 @@ export const removeLesson = lesson => {
 	}
 }
 
+const updateLikeCounter = lesson => {
+	return {
+		type: 'UPDATE_LIKE_COUNTER',
+		lesson 
+	}
+}
+
 
 // const editLesson = lesson => {
 // 	return {
@@ -83,6 +90,23 @@ export const deleteLesson = (lessonId) => {
 			dispatch(removeLesson(lessonId));
 		})
 		.catch(error => console.log(error))
+	}
+}
+
+export const likeLesson = lesson => {
+	return dispatch => {
+		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
+			method: "PATCH",
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ lesson: lesson })
+		})
+			.then(response => response.json())
+			.then(lesson => {
+				dispatch(updateLikeCounter(lesson))
+			})
+			.catch(error => console.log(error))
 	}
 }
 

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import DeleteLesson from '../containers/DeleteLesson';
 
 class LessonCard extends Component {
-	constructor() {
-		super() 
-		this.state = {
-			count: 0
-		}
-	}
+	// constructor() {
+	// 	super() 
+	// 	this.state = {
+	// 		count: 0
+	// 	}
+	// }
 
 	handleOnClick = () => {
 		this.setState({
