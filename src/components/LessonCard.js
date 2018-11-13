@@ -2,20 +2,29 @@ import React, { Component } from 'react';
 import { Col, Card, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import DeleteLesson from '../containers/DeleteLesson';
+import { likeLesson } from '../actions/lessons';
+import { connect } from 'react-redux';
 
 class LessonCard extends Component {
-	// constructor() {
-	// 	super() 
+	// constructor(props) {
+	// 	super(props) 
 	// 	this.state = {
-	// 		count: 0
+	// 		likes: this.props.lesson.likes,
 	// 	}
 	// }
 
-	handleOnClick = () => {
-		this.setState({
-			count: this.state.count + 1
-		})
+	// handleOnClick = () => {
+	// 	this.setState({
+	// 		likes: this.state.likes + 1
+	// 	})
+	// }
+
+	handleOnClick = (lesson) => {
+		const updatedLesson = Object.assign({}, lesson, { likes: lesson.likes + 1 })
+		this.props.likeLesson(updatedLesson)
 	}
+
+
 
 	render() {
 		const { lesson } = this.props;
@@ -33,8 +42,11 @@ class LessonCard extends Component {
 			<CardText>Total Time: {lesson.total_time}</CardText> 
 			<CardText>{lesson.summary}</CardText>
 
-			<Button onClick={this.handleOnClick}> Like </Button> 
-			<h4>{this.state.count}</h4>
+			<Button onClick={() => this.handleOnClick(lesson)}>Like</Button> 
+			<h5>{this.props.lesson.likes}</h5>
+
+			
+			
 
 		</CardBody>
 		
@@ -44,4 +56,5 @@ class LessonCard extends Component {
 	}
 }
 
-export default LessonCard;
+
+export default connect(null, { likeLesson })(LessonCard);

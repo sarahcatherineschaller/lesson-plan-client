@@ -21,7 +21,7 @@ export const removeLesson = lesson => {
 	}
 }
 
-const updateLikeCounter = lesson => {
+export const updateLikeCounter = lesson => {
 	return {
 		type: 'UPDATE_LIKE_COUNTER',
 		lesson 
@@ -93,14 +93,16 @@ export const deleteLesson = (lessonId) => {
 	}
 }
 
-export const likeLesson = lesson => {
+export const likeLesson = (updatedLesson) => {
+	console.log(updatedLesson)
 	return dispatch => {
-		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
+		return fetch(`http://localhost:3001/api/v1/lesson_plans/${updatedLesson.id}`, {
 			method: "PATCH",
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Accept': 'application/json'
 			},
-			body: JSON.stringify({ lesson: lesson })
+			body: JSON.stringify( updatedLesson )
 		})
 			.then(response => response.json())
 			.then(lesson => {
@@ -112,13 +114,13 @@ export const likeLesson = lesson => {
 
 // export const updateLesson = (lesson, history) => {
 // 	return dispatch => {
-// 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
-// 			method: "PATCH",
-// 			headers: {
-// 				"Content-Type": 'application:json'
-// 			},
-// 			body: JSON.stringify({ lesson: lesson })
-// 		})
+		// return fetch(`http://localhost:3001/api/v1/lesson_plans/${lesson.id}`, {
+		// 	method: "PATCH",
+		// 	headers: {
+		// 		"Content-Type": 'application:json'
+		// 	},
+		// 	body: JSON.stringify({ lesson: lesson })
+		// })
 // 			.then(response => response.json())
 // 			.then(lesson => {
 // 				dispatch(editLesson(lesson)) 
