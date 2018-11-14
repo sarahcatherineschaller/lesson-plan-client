@@ -42,7 +42,7 @@ class LessonCard extends Component {
 			<CardText>Total Time: {lesson.total_time}</CardText> 
 			<CardText>{lesson.summary}</CardText>
 
-			<Button onClick={() => this.handleOnClick(lesson)}>Like</Button> 
+			<Button color="primary" onClick={() => this.handleOnClick(lesson)}>Like</Button> 
 			<h5>{this.props.lesson.likes}</h5>
 
 			

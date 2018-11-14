@@ -94,7 +94,6 @@ export const deleteLesson = (lessonId) => {
 }
 
 export const likeLesson = (updatedLesson) => {
-	console.log(updatedLesson)
 	return dispatch => {
 		return fetch(`http://localhost:3001/api/v1/lesson_plans/${updatedLesson.id}`, {
 			method: "PATCH",

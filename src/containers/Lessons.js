@@ -9,9 +9,23 @@ import { Card, CardBody, Row, UncontrolledCollapse, Button } from 'reactstrap';
 
 
 class Lessons extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { lessons: [] }
+
+		this.handleOnClick = this.handleOnClick.bind(this)
+	}
+
+	handleOnClick(lessons) {
+		this.setState({
+			lessons: lessons.sort(function(a, b) {
+				return b.likes - a.likes
+			})
+		})
+	}
 
 	render() {
-		const lessons = this.props.lessons
+		const { lessons } = this.props
 
 		return(
 
@@ -20,12 +34,17 @@ class Lessons extends Component {
 				<Button color="primary" id="toggler" style={{ margin: '2rem' }}>
 					New Lesson
 				</Button>
+
+				<Button onClick={() => this.handleOnClick(lessons)}>
+					Sort by Likes
+				</Button>
+
 				<UncontrolledCollapse toggler="#toggler">
 					<LessonForm />
 				</UncontrolledCollapse>
 				<Row>
 			
-				{this.props && this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)}
+				{lessons && lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)}
 				</Row>
 			</div>
 		
@@ -41,7 +60,6 @@ class Lessons extends Component {
 // });
 
 const mapStateToProps = (state) => {
-	console.log(state)
 	
 	return({
 		lessons: state.lessonsReducer
