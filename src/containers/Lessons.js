@@ -11,21 +11,28 @@ import { Card, CardBody, Row, UncontrolledCollapse, Button } from 'reactstrap';
 class Lessons extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { lessons: [] }
-
-		this.handleOnClick = this.handleOnClick.bind(this)
+		this.state = { 
+			lessons: [],
+		}
 	}
 
-	handleOnClick(lessons) {
+
+	handleOnClick = (lessons) => {
+		const lessonCopy = Object.assign(...this.state.lessons, lessons)
+
+		const orderedLessons = lessonCopy.sort(function(a, b) { return b.likes - a.likes })
+
 		this.setState({
-			lessons: lessons.sort(function(a, b) {
-				return b.likes - a.likes
-			})
+			lessons: orderedLessons
 		})
+		
 	}
+
+
 
 	render() {
-		const { lessons } = this.props
+
+		const { lessons } = this.props 
 
 		return(
 
@@ -34,10 +41,8 @@ class Lessons extends Component {
 				<Button color="primary" id="toggler" style={{ margin: '2rem' }}>
 					New Lesson
 				</Button>
-
-				<Button onClick={() => this.handleOnClick(lessons)}>
-					Sort by Likes
-				</Button>
+				
+				<Button onClick={() => this.handleOnClick(lessons)}>Sort by Likes</Button>
 
 				<UncontrolledCollapse toggler="#toggler">
 					<LessonForm />
@@ -53,16 +58,10 @@ class Lessons extends Component {
 	}
 }
 
-// const mapDispatchToProps = dispatch => ({
-// 	onGetLessons() {
-// 		dispatch(getLessons());
-// 	}
-// });
-
 const mapStateToProps = (state) => {
-	
-	return({
-		lessons: state.lessonsReducer
-	})
+  return({
+    lessons: state.lessonsReducer
+  })
 }
+
 export default connect(mapStateToProps, { getLessons })(Lessons);
