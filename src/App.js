@@ -36,7 +36,7 @@ class App extends Component {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/lessons/new" component={LessonForm} />
-        <Route exact path="/lessons" component={Lessons} lessons={lessons}/>
+        <Route exact path="/lessons" component={Lessons}/>
         <Route exact path="/lessons/:lessonId" component={LessonShow} />
         </Switch>
        </div>
@@ -46,6 +46,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log("parent component state:")
+  console.log(state)
   return({
     lessons: state.lessonsReducer
   })

@@ -17,32 +17,34 @@ class Lessons extends Component {
 	}
 
 
-	handleOnClick = (lessons) => {
-		const lessonCopy = Object.assign(...this.state.lessons, lessons)
+	// handleOnClick = () => {
+	// 	const lessonCopy = [...this.props.lessons]
+	// 	// const lessonCopy = Object.assign(this.state.lessons, lessons)
+	// 	// const lessonArray = Object.values(lessonCopy)
 
-		const orderedLessons = lessonCopy.sort(function(a, b) { return b.likes - a.likes })
+	// 	// const orderedLessons = lessonCopy.sort(function(a, b) { return b.likes - a.likes })
 
-		this.setState({
-			lessons: orderedLessons
-		})
+	// 	this.setState({
+	// 		lessons: lessonCopy.sort(function(a, b) { return b.likes - a.likes })
+	// 	})
 		
-	}
+	// }
+
 
 
 
 	render() {
 
-		const { lessons } = this.props 
+		const { lessons } = this.props
 
 		return(
 
 			<div>
 
+
 				<Button color="primary" id="toggler" style={{ margin: '2rem' }}>
 					New Lesson
 				</Button>
-				
-				<Button onClick={() => this.handleOnClick(lessons)}>Sort by Likes</Button>
 
 				<UncontrolledCollapse toggler="#toggler">
 					<LessonForm />
@@ -59,6 +61,7 @@ class Lessons extends Component {
 }
 
 const mapStateToProps = (state) => {
+	console.log(state)
   return({
     lessons: state.lessonsReducer
   })
